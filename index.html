@@ -13,7 +13,7 @@
       background-size: cover;
       font-family: sans-serif;
       display: flex;
-      justify-content: flex-start; /* Align content to the left */
+      justify-content: flex-start;
       align-items: center;
     }
 
@@ -21,7 +21,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding-left: 350px; /* Increased left padding to move over an extra inch */
+      padding-left: 350px;
       padding-right: 40px;
       width: 100%;
       gap: 50px;
@@ -96,11 +96,20 @@
 
   <script type="text/javascript">
     function openDestiny() {
-      window.open(
+      const popup = window.open(
         "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search",
         "Destiny",
         "width=800,height=600,scrollbars=yes,resizable=yes"
       );
+
+      if (popup) {
+        popup.focus(); // First attempt to bring popup to front
+        setTimeout(() => {
+          popup.focus(); // Reinforce focus in case of delays
+        }, 300);
+      } else {
+        alert("Popup blocked! Please allow popups for this site.");
+      }
     }
   </script>
 </head>
