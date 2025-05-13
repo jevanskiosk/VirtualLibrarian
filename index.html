@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Link to the CSS file -->
+  <!-- Link to your stylesheet if needed -->
   <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Librarian</title>
+  <title>Virtual Librarian with Chatbot</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center; /* Centers content horizontally */
+      align-items: center;     /* Centers content vertically */
+      background-color: #f0f0f0; /* Optional: Set a light background */
+    }
+
+    /* Chatbot iframe styling */
+    iframe {
+      width: 30vw; /* 30% of the viewport width */
+      height: 60vh; /* Adjust the height to fit your design */
+      border: none;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow around the iframe */
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Button to open Destiny Catalog -->
-  <div style="text-align:center; margin-bottom: 10px;">
-    <button 
-      onclick="openDestiny()" 
-      style="
-        width: 95%; 
-        max-width: 800px; 
-        height: 50px; 
-        font-size: 18px; 
-        background-color: #004080; 
-        color: white; 
-        border: none; 
-        border-radius: 8px;
-        box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-        cursor: pointer;
-      ">
-      🔍 Open Library Catalog
-    </button>
-  </div>
-
-  <!-- JavaScript for Popup -->
-  <script type="text/javascript">
-    function openDestiny() {
-      window.open(
-        "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search",
-        "Destiny",
-        "width=800,height=600,scrollbars=yes,resizable=yes"
-      );
-    }
-  </script>
+  <!-- Chatbot iframe -->
+  <iframe src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write" frameborder="0"></iframe>
 
 </body>
 </html>
+
 
 
