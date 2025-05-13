@@ -1,9 +1,20 @@
 /* styles.css */
 body {
-  background-image: url('myBookBuddy Background.png'); /* Use your uploaded image file */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: url('myBookBuddy Background.png'); /* Path to your background image */
+  background-size: cover;  /* Make the background cover the whole page */
+  background-position: center; /* Center the background */
+  background-attachment: fixed; /* Keep the background fixed during scrolling */
   margin: 0;
-  font-family: Arial, sans-serif; /* You can change this if you prefer a different font */
+  padding: 0;
+  height: 100vh; /* Make the body full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif; /* Optional: Customize the font */
+  color: white; /* Make the text color visible against the background */
+}
+
+h1 {
+  font-size: 3rem; /* Adjust the size of the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow to the text for better visibility */
 }
