@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Playlist</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;  /* Prevent scrolling */
+      background-color: black;
+      height: 100%;  /* Full height */
+      width: 100%;   /* Full width */
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;    /* Full viewport width */
+      height: 100vh;   /* Full viewport height */
+      transform: scale(1.02);  /* Scale slightly to cover any space */
+      transform-origin: top left;
+      border: none;
+      background-color: black;
+      display: block;
+      clip-path: inset(0 0 0 0);  /* Full screen without clipping */
+    }
+  </style>
+</head>
+<body>
+  <!-- YouTube playlist embed with autoplay, loop, and sound -->
+  <iframe 
+    src="https://www.youtube.com/embed/videoseries?list=PLoNXhSmdR5P2FOoj1r4mZ_82o_AoOcVsT&rel=0&modestbranding=1&iv_load_policy=3&controls=1&autoplay=1&loop=1&playlist=PLoNXhSmdR5P2FOoj1r4mZ_82o_AoOcVsT&cc_load_policy=1" 
+    allow="fullscreen; encrypted-media"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</body>
+</html>
 
