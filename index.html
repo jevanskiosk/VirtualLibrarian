@@ -8,13 +8,39 @@
   <title>Virtual Librarian</title>
 </head>
 <body>
-  <!-- Chatbot Embed -->
-  <iframe 
-    src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" 
-    style="width: 100%; height: 700px; border: none; margin: 0; padding: 0;" 
-    frameborder="0" 
-    allow="clipboard-write">
-  </iframe>
+
+  <!-- Button to open Destiny Catalog -->
+  <div style="text-align:center; margin-bottom: 10px;">
+    <button 
+      onclick="openDestiny()" 
+      style="
+        width: 95%; 
+        max-width: 800px; 
+        height: 50px; 
+        font-size: 18px; 
+        background-color: #004080; 
+        color: white; 
+        border: none; 
+        border-radius: 8px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+        cursor: pointer;
+      ">
+      🔍 Open Library Catalog
+    </button>
+  </div>
+
+  <!-- JavaScript for Popup -->
+  <script type="text/javascript">
+    function openDestiny() {
+      window.open(
+        "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search",
+        "Destiny",
+        "width=800,height=600,scrollbars=yes,resizable=yes"
+      );
+    }
+  </script>
+
 </body>
 </html>
+
 
