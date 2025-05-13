@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Playlist</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+      height: 100%;
+      width: 100%;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      transform: scale(1.02);
+      transform-origin: top left;
+      border: none;
+      background-color: black;
+      display: block;
+      clip-path: inset(0 0 0 0);
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    src="https://www.youtube.com/embed/videoseries?list=PLoNXhSmdR5P2FOoj1r4mZ_82o_AoOcVsT&rel=0&modestbranding=1&iv_load_policy=3&controls=1&loop=1&playlist=PLoNXhSmdR5P2FOoj1r4mZ_82o_AoOcVsT&cc_load_policy=1" 
+    allow="fullscreen; encrypted-media"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</body>
+</html>
