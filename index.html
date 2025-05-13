@@ -2,91 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Virtual Librarian</title>
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      height: 100%;
+      width: 100%;
       background: url('myBookBuddy Background.png') no-repeat center center fixed;
       background-size: cover;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: Arial, sans-serif;
     }
 
     .container {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 40px;
-      gap: 50px;
-    }
-
-    .chatbot {
-      width: 24vw;
-      height: 85vh;
-      border: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      border-radius: 10px;
-      background: transparent;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .sidebar {
-      max-width: 300px;
+      max-width: 396px;
       color: white;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
 
-    .sidebar p {
-      font-size: 27px; /* reduced by 50% */
-      margin-bottom: 30px;
-      line-height: 1.3;
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
     }
 
-    .sidebar button {
+    .catalog-button {
       width: 100%;
-      height: 50px; /* reduced by 50% */
-      font-size: 18px; /* reduced by 50% */
+      height: 60px;
+      font-size: 1.2rem;
       background-color: #004080;
       color: white;
       border: none;
       border-radius: 8px;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
       cursor: pointer;
     }
 
-    @media (max-width: 800px) {
+    .chatbot-frame {
+      width: 60%;
+      height: 90%;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      background-color: white;
+    }
+
+    @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        justify-content: flex-start;
+        padding-top: 40px;
       }
 
-      .chatbot {
-        width: 90vw;
-        height: 75vh;
+      .chatbot-frame {
+        width: 90%;
+        height: 80%;
       }
 
       .sidebar {
+        max-width: 100%;
+        margin-bottom: 20px;
         text-align: center;
-        max-width: 90%;
-      }
-
-      .sidebar p {
-        font-size: 18px;
-      }
-
-      .sidebar button {
-        font-size: 16px;
-        height: 50px;
       }
     }
   </style>
+
   <script type="text/javascript">
     function openDestiny() {
       window.open(
@@ -97,24 +87,26 @@
     }
   </script>
 </head>
+
 <body>
   <div class="container">
     <div class="sidebar">
-      <p>
+      <h2>
         Chat with our AI book suggestion bot to find the perfect book!<br><br>
         You can also click the button below to search Mayfair's catalog and check availability while you chat!
-      </p>
-      <button onclick="openDestiny()">🔍 Open Library Catalog</button>
+      </h2>
+      <button class="catalog-button" onclick="openDestiny()">🔍 Open Library Catalog</button>
     </div>
 
-    <iframe 
-      class="chatbot"
+    <iframe
+      class="chatbot-frame"
       src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
-      allow="clipboard-write">
-    </iframe>
+      allow="clipboard-write"
+    ></iframe>
   </div>
 </body>
 </html>
+
 
 
 
