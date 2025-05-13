@@ -11,25 +11,44 @@
       height: 100vh;
       background: url('myBookBuddy Background.png') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    iframe.chatbot {
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 40px;
+      gap: 50px;
+    }
+
+    .chatbot {
       width: 40vw;
-      height: 75vh;
+      height: 85vh;
       border: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       border-radius: 10px;
       background: transparent;
     }
 
-    button {
-      margin-top: 20px;
-      width: 240px;
+    .sidebar {
+      max-width: 300px;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .sidebar p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar button {
+      width: 100%;
       height: 50px;
       font-size: 18px;
       background-color: #004080;
@@ -38,6 +57,24 @@
       border-radius: 8px;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
       cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .chatbot {
+        width: 90vw;
+        height: 75vh;
+      }
+
+      .sidebar {
+        text-align: center;
+        max-width: 90%;
+      }
     }
   </style>
   <script type="text/javascript">
@@ -51,19 +88,24 @@
   </script>
 </head>
 <body>
+  <div class="container">
+    <div class="sidebar">
+      <p>
+        Chat with our AI book suggestion bot to find the perfect book!<br><br>
+        You can also click the button below to search Mayfair's catalog and check availability while you chat!
+      </p>
+      <button onclick="openDestiny()">🔍 Open Library Catalog</button>
+    </div>
 
-  <!-- Chatbot iframe -->
-  <iframe 
-    class="chatbot"
-    src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
-    allow="clipboard-write">
-  </iframe>
-
-  <!-- Catalog button -->
-  <button onclick="openDestiny()">🔍 Open Library Catalog</button>
-
+    <iframe 
+      class="chatbot"
+      src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
+      allow="clipboard-write">
+    </iframe>
+  </div>
 </body>
 </html>
+
 
 
 
