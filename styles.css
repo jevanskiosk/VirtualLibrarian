@@ -1,0 +1,9 @@
+/* styles.css */
+body {
+  background-image: url('myBookBuddy Background.png'); /* Use your uploaded image file */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, sans-serif; /* You can change this if you prefer a different font */
+}
