@@ -93,25 +93,6 @@
       }
     }
   </style>
-
-  <script type="text/javascript">
-    function openDestiny() {
-      const popup = window.open(
-        "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search",
-        "Destiny",
-        "width=800,height=600,scrollbars=yes,resizable=yes"
-      );
-
-      if (popup) {
-        popup.focus(); // First attempt to bring popup to front
-        setTimeout(() => {
-          popup.focus(); // Reinforce focus in case of delays
-        }, 300);
-      } else {
-        alert("Popup blocked! Please allow popups for this site.");
-      }
-    }
-  </script>
 </head>
 <body>
   <div class="container">
@@ -120,7 +101,9 @@
         Chat with our AI book suggestion bot to find the perfect book!<br><br>
         You can also click the button below to search Mayfair's catalog and check availability while you chat!
       </p>
-      <button onclick="openDestiny()">🔍 Open Library Catalog</button>
+      <button onclick="window.open('https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search', '_blank')">
+        🔍 Open Library Catalog
+      </button>
     </div>
 
     <iframe 
