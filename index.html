@@ -1,50 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library Chatbot</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Librarian</title>
   <style>
-    /* Add any CSS you need here */
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      font-size: 16px;
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('myBookBuddy Background.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 350px;
+      padding-right: 40px;
+      width: 100%;
+      gap: 50px;
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      max-width: 300px;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .sidebar p {
+      font-size: 27px;
+      margin-bottom: 30px;
+      line-height: 1.3;
+    }
+
+    .sidebar button {
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
       cursor: pointer;
+    }
+
+    .chatbot {
+      width: 24vw;
+      height: 85vh;
+      border: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        justify-content: center;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .chatbot {
+        width: 90vw;
+        height: 75vh;
+      }
+
+      .sidebar {
+        text-align: center;
+        max-width: 90%;
+      }
+
+      .sidebar p {
+        font-size: 18px;
+      }
+
+      .sidebar button {
+        font-size: 16px;
+        height: 50px;
+      }
     }
   </style>
 
   <script type="text/javascript">
-    function openDestiny() {
-      const url = "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search";
-      const features = "width=900,height=700,scrollbars=yes,resizable=yes,noopener,noreferrer";
-      const popup = window.open(url, "Destiny", features);
+    // Auto-trigger function for opening the Destiny catalog
+    window.onload = function() {
+      const popup = window.open(
+        "https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search",
+        "Destiny",
+        "width=800,height=600,scrollbars=yes,resizable=yes"
+      );
 
       if (popup) {
-        popup.focus(); // Bring popup to front
-        setTimeout(() => popup.focus(), 300); // Reinforce focus
+        popup.focus(); // First attempt to bring the popup to the front
+        setTimeout(() => {
+          popup.focus(); // Reinforce focus in case of delays
+        }, 300);
       } else {
         alert("Popup blocked! Please allow popups for this site.");
       }
-    }
+    };
   </script>
 </head>
 <body>
-  <div>
-    <p>
-      Chat with our AI book suggestion bot to find the perfect book!<br><br>
-      You can also click the button below to search Mayfair's catalog and check availability while you chat!
-    </p>
-    <button onclick="openDestiny()">🔍 Open Library Catalog</button>
-  </div>
+  <div class="container">
+    <div class="sidebar">
+      <p>
+        Chat with our AI book suggestion bot to find the perfect book!<br><br>
+        You can also click the button below to search Mayfair's catalog and check availability while you chat!
+      </p>
+      <button onclick="window.open('https://busdlibrary.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search', 'Destiny', 'width=800,height=600,scrollbars=yes,resizable=yes');">🔍 Open Library Catalog</button>
+    </div>
 
-  <!-- Your chatbot iframe or other content goes here -->
-  <iframe 
-    src="chatbot.html"
-    width="100%"
-    height="600"
-    style="border:1px solid #ccc;"
-  ></iframe>
+    <iframe 
+      class="chatbot"
+      src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
+      allow="clipboard-write">
+    </iframe>
+  </div>
 </body>
 </html>
