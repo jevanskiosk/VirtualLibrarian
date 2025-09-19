@@ -1,5 +1,4 @@
-
-<!-- index.html: chatbot only -->
+<!-- index.html: chatbot with YouTube QR -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +39,22 @@
       font-size: 27px;
       margin-bottom: 30px;
       line-height: 1.3;
+    }
+
+    .qr-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .qr-section h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .qr-section img {
+      width: 180px;
+      height: 180px;
     }
 
     .chatbot {
@@ -85,6 +100,13 @@
       <p>
         Chat with our AI book suggestion bot to find the perfect book!
       </p>
+
+      <div class="qr-section">
+        <h3>Check us out on YouTube</h3>
+        <img 
+          src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/c/mrevans" 
+          alt="QR code for Mr. Evans YouTube channel">
+      </div>
     </div>
 
     <iframe 
