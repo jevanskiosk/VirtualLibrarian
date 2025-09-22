@@ -1,4 +1,4 @@
-<!-- index.html: chatbot with YouTube QR (white text + smaller QR + crawl) -->
+<!-- index.html: chatbot with YouTube QR (white text + smaller QR + crawl with shadow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +20,14 @@
     /* Crawl bar at the top */
     .crawl {
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: transparent; /* no dimming */
       color: white;
-      padding: 8px 0;
-      font-size: 16px;
+      padding: 10px 0;
+      font-size: 18px;
       overflow: hidden;
       position: relative;
       white-space: nowrap;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8); /* glow for legibility */
     }
 
     .crawl span {
