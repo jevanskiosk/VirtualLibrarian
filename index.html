@@ -12,7 +12,7 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 @keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
 .container{display:flex;flex-direction:row;align-items:flex-start;padding:0 40px;gap:60px;margin-top:10px;}
 .chatbot{width:26vw;height:85vh;border:none;box-shadow:0 0 10px rgba(0,0,0,.3);border-radius:12px;background:transparent;margin-left:200px;z-index:5;}
-.sidebar{display:flex;flex-direction:row;justify-content:space-between;align-items:flex-start;max-width:700px;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.7);margin-left:225px;margin-top:355px;z-index:5;transform:scale(0.9);transform-origin:top left;gap:50px;} 
+.sidebar{display:flex;flex-direction:row;justify-content:space-between;align-items:flex-start;max-width:800px;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.7);margin-left:225px;margin-top:355px;z-index:5;transform:scale(0.9);transform-origin:top left;gap:50px;} 
 
 /* YouTube box */
 .youtube-box{background:rgba(178,34,34,0.55);padding:15px 20px;border-radius:12px;text-align:center;width:45%;box-shadow:0 0 8px rgba(0,0,0,.5);}
@@ -20,8 +20,8 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 .youtube-box img{width:144px;height:144px;display:block;margin:0 auto;}
 
 /* Coming Soon box */
-.button-box{background:rgba(178,34,34,0.55);padding:8px 35px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;width:45%;}
-.button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;color:#fff;}
+.button-box{background:rgba(178,34,34,0.55);padding:8px 35px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;width:60%;} /* widened to fit "Coming soon" */
+.button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;color:#fff;white-space:nowrap;}
 .button-box h3::before,.button-box h3::after{content:'▼';margin:0 10px;}
 .button-section{display:flex;flex-direction:column;gap:25px;align-items:center;width:100%;}
 .button-group{display:flex;flex-direction:column;align-items:center;gap:6px;width:216px;}
