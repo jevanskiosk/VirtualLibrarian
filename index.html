@@ -6,67 +6,126 @@
 <title>Virtual Librarian</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
-html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursive,sans-serif;background:url('backgroundwithbubble.png') no-repeat center center fixed;background-size:cover;overflow-x:hidden;overflow-y:hidden;}
-.crawl{width:100%;color:#fff;padding:10px 0;font-size:36px;overflow:hidden;white-space:nowrap;text-shadow:1px 1px 4px rgba(0,0,0,.8);z-index:10;}
-.crawl span{display:inline-block;padding-left:100%;animation:scroll-left 50s linear infinite;}
-@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
-.container{display:flex;flex-direction:row;align-items:flex-start;padding:0 40px;gap:60px;margin-top:10px;}
-.chatbot{width:26vw;height:85vh;border:none;box-shadow:0 0 10px rgba(0,0,0,.3);border-radius:12px;background:transparent;margin-left:200px;z-index:5;}
-.sidebar{display:flex;flex-direction:row;justify-content:space-between;align-items:flex-start;max-width:800px;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.7);margin-left:225px;margin-top:405px;z-index:5;transform:scale(0.9);transform-origin:top left;gap:50px;} /* moved down 50px */
+
+html, body {
+  margin:0; padding:0; height:100%; width:100%;
+  font-family:'Baloo 2', cursive, sans-serif;
+  background:url('backgroundwithbubble.png') no-repeat center center fixed;
+  background-size:cover; overflow-x:hidden; overflow-y:hidden;
+}
+
+.crawl {
+  width:100%; color:#fff; padding:10px 0; font-size:2.2em;
+  overflow:hidden; white-space:nowrap;
+  text-shadow:1px 1px 4px rgba(0,0,0,.8); z-index:10;
+}
+.crawl span {
+  display:inline-block; padding-left:100%;
+  animation:scroll-left 50s linear infinite;
+}
+@keyframes scroll-left {
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-100%); }
+}
+
+.container {
+  display:flex; flex-direction:row; align-items:flex-start;
+  padding:2% 5%; gap:5%; margin-top:1%;
+}
+
+.chatbot {
+  flex:1; min-width:300px; height:85vh;
+  border:none; border-radius:12px; background:transparent;
+  box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+.sidebar {
+  display:flex; flex-direction:row; justify-content:space-between;
+  flex:1; min-width:300px; gap:5%;
+}
 
 /* YouTube box */
-.youtube-box{background:rgba(178,34,34,0.55);padding:15px 20px;border-radius:12px;text-align:center;width:45%;box-shadow:0 0 8px rgba(0,0,0,.5);}
-.youtube-box h3{font-size:30px;margin-bottom:10px;}
-.youtube-box img{width:144px;height:144px;display:block;margin:0 auto;}
+.youtube-box {
+  background:rgba(178,34,34,0.55); padding:1em 1.2em;
+  border-radius:12px; text-align:center; flex:1;
+  box-shadow:0 0 8px rgba(0,0,0,.5);
+}
+.youtube-box h3 {
+  font-size:1.5em; margin-bottom:0.5em; white-space:nowrap;
+}
+.youtube-box img {
+  width:9em; height:9em; display:block; margin:0 auto;
+}
 
 /* Coming Soon box */
-.button-box{background:rgba(178,34,34,0.55);padding:8px 35px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;width:60%;}
-.button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;color:#fff;white-space:nowrap;}
-.button-box h3::before,.button-box h3::after{content:'▼';margin:0 10px;}
-.button-section{display:flex;flex-direction:column;gap:25px;align-items:center;width:100%;}
-.button-group{display:flex;flex-direction:column;align-items:center;gap:6px;width:216px;}
-.button-group h4{margin:0;font-size:23px;font-weight:600;text-align:center;width:100%;color:#fff;}
-.button-group .button{display:block;width:100%;text-align:center;padding:14px 25px;background:#3b82f6;color:#fff;font-size:25px;font-weight:600;text-decoration:none;border-radius:12px;box-shadow:0 0 8px rgba(0,0,0,.5);cursor:default;opacity:1;}
-.button-group .button:hover{transform:none;background:#3b82f6;}
+.button-box {
+  background:rgba(178,34,34,0.55); padding:0.5em 2em 1.5em;
+  border-radius:12px; display:flex; flex-direction:column;
+  align-items:center; flex:1;
+  min-width:15em;
+}
+.button-box h3 {
+  font-size:1.7em; margin-bottom:1em; font-weight:600;
+  text-align:center; color:#fff; white-space:nowrap;
+}
+.button-box h3::before, .button-box h3::after {
+  content:'▼'; margin:0 0.5em;
+}
+.button-section { display:flex; flex-direction:column; gap:1.5em; align-items:center; width:100%; }
+.button-group { display:flex; flex-direction:column; align-items:center; gap:0.25em; width:100%; max-width:13em; }
+.button-group h4 { margin:0; font-size:1.25em; font-weight:600; text-align:center; color:#fff; }
+.button-group .button {
+  display:block; width:100%; text-align:center; padding:0.75em 1em;
+  background:#3b82f6; color:#fff; font-size:1.25em; font-weight:600;
+  border-radius:12px; box-shadow:0 0 8px rgba(0,0,0,.5);
+  cursor:default; opacity:1; text-decoration:none;
+}
+.button-group .button:hover { transform:none; background:#3b82f6; }
 
+/* Responsive */
 @media(max-width:800px){
-  .container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}
-  .chatbot{width:90vw;height:75vh;margin-left:0;}
-  .sidebar{flex-direction:column;align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);gap:30px;}
-  .youtube-box{width:90%;h3{font-size:27px;} img{width:117px;height:117px;}}
-  .button-box{width:90%;h3{font-size:43px;}}
-  .button-group h4{font-size:20px;}
-  .button-group .button{font-size:20px;padding:12px 18px;}
+  .container { flex-direction:column; align-items:center; gap:2em; padding:1em; }
+  .chatbot { width:90vw; height:75vh; }
+  .sidebar { flex-direction:column; align-items:center; gap:1.5em; }
+  .youtube-box { width:90%; }
+  .youtube-box h3 { font-size:1.3em; }
+  .youtube-box img { width:7.5em; height:7.5em; }
+  .button-box { width:90%; }
+  .button-box h3 { font-size:2em; }
+  .button-group h4 { font-size:1em; }
+  .button-group .button { font-size:1em; padding:0.6em 1em; }
 }
 </style>
 </head>
 <body>
-<div class="crawl"><span>⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice.</span></div>
+<div class="crawl">
+  <span>⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice.</span>
+</div>
+
 <div class="container">
-<iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
-<div class="sidebar">
-<!-- YouTube box on the left -->
-<div class="youtube-box">
-<h3>Check us out on YouTube</h3>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
-</div>
+  <iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
+  <div class="sidebar">
+    <!-- YouTube box -->
+    <div class="youtube-box">
+      <h3>Check us out on YouTube</h3>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
+    </div>
 
-<!-- Buttons box on the right -->
-<div class="button-box">
-<h3>Coming soon</h3>
-<div class="button-section">
-<div class="button-group">
-<h4>Our Library Catalog</h4>
-<div class="button">🔎 Destiny Portal</div>
-</div>
-<div class="button-group">
-<h4>Our eBook Catalog</h4>
-<div class="button">📚 Sora Library</div>
-</div>
-</div>
-</div>
-
-</div>
+    <!-- Coming Soon box -->
+    <div class="button-box">
+      <h3>Coming soon</h3>
+      <div class="button-section">
+        <div class="button-group">
+          <h4>Our Library Catalog</h4>
+          <div class="button">🔎 Destiny Portal</div>
+        </div>
+        <div class="button-group">
+          <h4>Our eBook Catalog</h4>
+          <div class="button">📚 Sora Library</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
