@@ -16,17 +16,14 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 .qr-section{text-align:center;margin-bottom:20px;margin-top:30px;text-shadow:2px 2px 6px rgba(0,0,0,0.9);}
 .qr-section h3{font-size:30px;margin-bottom:10px;}
 .qr-section img{width:144px;height:144px;display:block;margin:0 auto;}
-.button-box{margin-top:10px;background:rgba(0,0,0,0.5);padding:8px 25px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;}
-.button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;}
+.button-box{margin-top:10px;background:#1e3a8a;padding:8px 25px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;}
+.button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;color:#fff;}
 .button-box h3::before,.button-box h3::after{content:'▼';margin:0 10px;}
 .button-section{display:flex;flex-direction:column;gap:25px;align-items:center;width:100%;}
 .button-group{display:flex;flex-direction:column;align-items:center;gap:6px;width:216px;}
-.button-group h4{margin:0;font-size:23px;font-weight:600;text-align:center;width:100%;}
-.button-group a{display:block;width:100%;text-align:center;padding:14px 25px;background:#1e3a8a;color:#fff;font-size:25px;font-weight:600;text-decoration:none;border-radius:12px;box-shadow:0 0 8px rgba(0,0,0,.5);cursor:not-allowed;opacity:0.6;}
-.popup{position:fixed;top:50px;right:50px;width:50%;height:80%;background:#fff;box-shadow:0 0 15px rgba(0,0,0,.3);z-index:20;display:none;border-radius:12px;overflow:hidden;text-align:center;font-size:40px;padding:20px;color:#333;line-height:1.5;display:flex;justify-content:center;align-items:center;}
-.popup-header{background:#1e3a8a;color:#fff;font-weight:600;padding:10px;cursor:move;display:flex;justify-content:space-between;align-items:center;}
-.popup-header button{background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer;}
-@media(max-width:800px){.container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}.chatbot{width:90vw;height:75vh;margin-left:0;}.sidebar{align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);}.qr-section h3{font-size:27px;}.qr-section img{width:117px;height:117px;}.button-box h3{font-size:43px;}.button-group h4{font-size:20px;}.button-group a{font-size:20px;padding:12px 18px;}}
+.button-group h4{margin:0;font-size:23px;font-weight:600;text-align:center;width:100%;color:#fff;}
+.button-group .button{display:block;width:100%;text-align:center;padding:14px 25px;background:#3b82f6;color:#fff;font-size:25px;font-weight:600;text-decoration:none;border-radius:12px;box-shadow:0 0 8px rgba(0,0,0,.5);cursor:default;}
+@media(max-width:800px){.container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}.chatbot{width:90vw;height:75vh;margin-left:0;}.sidebar{align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);}.qr-section h3{font-size:27px;}.qr-section img{width:117px;height:117px;}.button-box h3{font-size:43px;}.button-group h4{font-size:20px;}.button-group .button{font-size:20px;padding:12px 18px;}}
 </style>
 </head>
 <body>
@@ -43,11 +40,11 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 <div class="button-section">
 <div class="button-group">
 <h4>Our Library Catalog</h4>
-<a>🔎 Destiny Portal</a>
+<div class="button">🔎 Destiny Portal</div>
 </div>
 <div class="button-group">
 <h4>Our eBook Catalog</h4>
-<a>📚 Sora Library</a>
+<div class="button">📚 Sora Library</div>
 </div>
 </div>
 </div>
