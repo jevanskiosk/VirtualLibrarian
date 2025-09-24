@@ -12,13 +12,13 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 @keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
 .container{display:flex;flex-direction:row;align-items:flex-start;padding:0 40px;gap:60px;margin-top:10px;}
 .chatbot{width:26vw;height:85vh;border:none;box-shadow:0 0 10px rgba(0,0,0,.3);border-radius:12px;background:transparent;margin-left:200px;z-index:5;}
-.sidebar{display:flex;flex-direction:column;align-items:center;max-width:380px;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.7);margin-left:225px;margin-top:305px;z-index:5;transform:scale(0.9);transform-origin:top left;}
-/* YouTube box moved down 100px and left 100px */
-.youtube-box{background:rgba(30,58,138,0.85);padding:15px 20px;border-radius:12px;margin-bottom:20px;margin-top:130px;margin-left:-100px;text-align:center;width:100%;box-shadow:0 0 8px rgba(0,0,0,.5);}
+.sidebar{display:flex;flex-direction:column;align-items:center;max-width:380px;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,.7);margin-left:225px;margin-top:305px;z-index:5;transform:scale(0.9);transform-origin:top left;gap:50px;} /* Added gap for spacing */
+/* YouTube box */
+.youtube-box{background:rgba(30,58,138,0.85);padding:15px 20px;border-radius:12px;text-align:center;width:100%;box-shadow:0 0 8px rgba(0,0,0,.5);}
 .youtube-box h3{font-size:30px;margin-bottom:10px;}
 .youtube-box img{width:144px;height:144px;display:block;margin:0 auto;}
-/* Coming Soon box moved up 300px, right 200px, and widened */
-.button-box{margin-top:-300px;margin-left:500px;background:#1e3a8a;padding:8px 35px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;min-width:280px;}
+/* Coming Soon box */
+.button-box{background:#1e3a8a;padding:8px 35px 25px;border-radius:12px;display:flex;flex-direction:column;align-items:center;min-width:280px;}
 .button-box h3{font-size:33px;margin-bottom:15px;font-weight:600;text-align:center;color:#fff;}
 .button-box h3::before,.button-box h3::after{content:'▼';margin:0 10px;}
 .button-section{display:flex;flex-direction:column;gap:25px;align-items:center;width:100%;}
@@ -26,7 +26,7 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 .button-group h4{margin:0;font-size:23px;font-weight:600;text-align:center;width:100%;color:#fff;}
 .button-group .button{display:block;width:100%;text-align:center;padding:14px 25px;background:#3b82f6;color:#fff;font-size:25px;font-weight:600;text-decoration:none;border-radius:12px;box-shadow:0 0 8px rgba(0,0,0,.5);cursor:default;opacity:1;}
 .button-group .button:hover{transform:none;background:#3b82f6;}
-@media(max-width:800px){.container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}.chatbot{width:90vw;height:75vh;margin-left:0;}.sidebar{align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);}.youtube-box h3{font-size:27px;}.youtube-box img{width:117px;height:117px;}.button-box h3{font-size:43px;}.button-group h4{font-size:20px;}.button-group .button{font-size:20px;padding:12px 18px;}}
+@media(max-width:800px){.container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}.chatbot{width:90vw;height:75vh;margin-left:0;}.sidebar{align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);gap:30px;}.youtube-box h3{font-size:27px;}.youtube-box img{width:117px;height:117px;}.button-box h3{font-size:43px;}.button-group h4{font-size:20px;}.button-group .button{font-size:20px;padding:12px 18px;}}
 </style>
 </head>
 <body>
@@ -34,13 +34,13 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 <div class="container">
 <iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
 <div class="sidebar">
-<!-- YouTube box moved down 100px and left 100px -->
+<!-- YouTube box -->
 <div class="youtube-box">
 <h3>Check us out on YouTube</h3>
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
 </div>
 
-<!-- Buttons disabled: no popups or links, moved up 300px, right 200px, and widened -->
+<!-- Buttons disabled: no popups or links -->
 <div class="button-box">
 <h3>Coming soon</h3>
 <div class="button-section">
