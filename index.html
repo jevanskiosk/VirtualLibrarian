@@ -24,7 +24,7 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 .button-group h4{margin:0;font-size:23px;font-weight:600;text-align:center;width:100%;}
 .button-group a{display:block;width:100%;text-align:center;padding:14px 25px;background:#1e3a8a;color:#fff;font-size:25px;font-weight:600;text-decoration:none;border-radius:12px;box-shadow:0 0 8px rgba(0,0,0,.5);transition:background .3s ease,transform .2s ease;cursor:pointer;}
 .button-group a:hover{background:#3b82f6;transform:scale(1.05);}
-.popup{position:fixed;top:50px;right:50px;width:50%;height:80%;background:#fff;box-shadow:0 0 15px rgba(0,0,0,.3);z-index:20;display:none;border-radius:12px;overflow:hidden;text-align:center;font-size:30px;padding:20px;color:#333;line-height:1.5;}
+.popup{position:fixed;top:50px;right:50px;width:50%;height:80%;background:#fff;box-shadow:0 0 15px rgba(0,0,0,.3);z-index:20;display:none;border-radius:12px;overflow:hidden;text-align:center;font-size:30px;padding:20px;color:#333;line-height:1.5;display:flex;justify-content:center;align-items:center;}
 .popup-header{background:#1e3a8a;color:#fff;font-weight:600;padding:10px;cursor:move;display:flex;justify-content:space-between;align-items:center;}
 .popup-header button{background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer;}
 @media(max-width:800px){.container{flex-direction:column;align-items:center;gap:30px;padding:20px;margin-left:0;}.chatbot{width:90vw;height:75vh;margin-left:0;}.sidebar{align-items:center;max-width:90%;margin-left:0;margin-top:0;transform:scale(0.9);}.qr-section h3{font-size:27px;}.qr-section img{width:117px;height:117px;}.button-box h3{font-size:43px;}.button-group h4{font-size:20px;}.button-group a{font-size:20px;padding:12px 18px;}}
@@ -59,8 +59,13 @@ html,body{margin:0;padding:0;height:100%;width:100%;font-family:'Baloo 2',cursiv
 <div id="popupContent">Coming Soon</div>
 </div>
 <script>
-function openPopup(){document.getElementById('popupWindow').style.display='block';document.getElementById('popupContent').textContent='Coming Soon';}
-function closePopup(){document.getElementById('popupWindow').style.display='none';}
+function openPopup(){
+document.getElementById('popupContent').textContent='Coming Soon';
+document.getElementById('popupWindow').style.display='flex';
+}
+function closePopup(){
+document.getElementById('popupWindow').style.display='none';
+}
 dragElement(document.getElementById("popupWindow"));
 function dragElement(elm){var pos1=0,pos2=0,pos3=0,pos4=0;var header=document.getElementById(elm.id+"Header");if(!header){header=elm;}header.onmousedown=dragMouseDown;function dragMouseDown(e){e=e||window.event;e.preventDefault();pos3=e.clientX;pos4=e.clientY;document.onmouseup=closeDragElement;document.onmousemove=elementDrag;}function elementDrag(e){e=e||window.event;e.preventDefault();pos1=pos3-e.clientX;pos2=pos4-e.clientY;pos3=e.clientX;pos4=e.clientY;elm.style.top=(elm.offsetTop-pos2)+"px";elm.style.left=(elm.offsetLeft-pos1)+"px";}function closeDragElement(){document.onmouseup=null;document.onmousemove=null;}}
 </script>
