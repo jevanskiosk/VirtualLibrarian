@@ -1,228 +1,144 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virtual Librarian</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Virtual Librarian - Halloween</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Baloo 2', cursive, sans-serif;
-  background: url('halloweenbackground.png') no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
+html,body {
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  font-family:'Baloo 2',cursive,sans-serif;
+  background:url('halloweenbackground.png') no-repeat center center fixed;
+  background-size:cover;
+  overflow-x:hidden;
+  overflow-y:hidden;
 }
 
-/* Scrolling banner */
+/* Crawl (warning text) */
 .crawl {
-  color: rgba(0, 0, 0, 0.7);
-  padding: 8px 0;
-  font-size: 36px;
-  white-space: nowrap;
-  overflow: hidden;
+  width:100%;
+  color:#ff7518; /* pumpkin orange */
+  padding:10px 0;
+  font-size:36px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-shadow:2px 2px 8px black, 0 0 10px purple;
+  z-index:10;
 }
 .crawl span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-left 25s linear infinite;
+  display:inline-block;
+  padding-left:100%;
+  animation:scroll-left 50s linear infinite;
 }
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  0% {transform:translateX(0);}
+  100% {transform:translateX(-100%);}
+}
+
+/* Layout */
+.container {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  padding:0 40px;
+  gap:60px;
+  margin-top:10px;
+}
+
+/* Chatbot iframe with Halloween border */
+.chatbot {
+  width:26vw;
+  height:85vh;
+  border:4px solid orange;
+  box-shadow:0 0 20px rgba(255,140,0,0.7), 0 0 30px purple;
+  border-radius:12px;
+  background:rgba(0,0,0,0.4);
+  margin-left:200px;
+  z-index:5;
 }
 
 /* Sidebar */
 .sidebar {
-  position: absolute;
-  top: 120px;
-  left: 8%;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  max-width:380px;
+  color:#fff;
+  text-shadow:2px 2px 6px rgba(0,0,0,.9);
+  margin-left:225px;
+  margin-top:305px;
+  z-index:5;
 }
-.sidebar h3 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
+
+/* QR Section */
 .qr-section {
-  text-align: center;
+  text-align:center;
+  margin-bottom:20px;
+  margin-top:30px;
+}
+.qr-section h3 {
+  font-size:36px;
+  margin-bottom:10px;
+  color:#ffcc00;
+  text-shadow:0 0 8px orange, 0 0 12px purple;
+  padding:8px 12px;
+  border-radius:8px;
+  background-color:rgba(0,0,0,0.5);
+  display:inline-block;
 }
 .qr-section img {
-  width: 160px;
-  height: 160px;
-  display: block;
-  margin: 0 auto;
-}
-.button-section {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
-}
-.button-group h4 {
-  margin: 0 0 6px 0;
-  font-size: 24px;
-}
-.button-group a {
-  display: inline-block;
-  padding: 14px 26px;
-  background: #1e3a8a;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.button-group a:hover {
-  background: #3b82f6;
-  transform: scale(1.05);
+  width:173px;
+  height:173px;
+  display:block;
+  margin:0 auto;
+  border:3px solid #ff7518;
+  box-shadow:0 0 12px orange, 0 0 20px purple;
+  border-radius:12px;
 }
 
-/* Chatbot */
-.chatbot {
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20.5vw;
-  height: 80vh;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-  background: transparent;
-}
-
-/* Popup window */
-.popup {
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  width: 50%;
-  height: 80%;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  border-radius: 12px;
-  display: none;
-  overflow: hidden;
-}
-.popup-header {
-  background: #1e3a8a;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.popup-header button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-.popup iframe {
-  width: 100%;
-  height: calc(100% - 40px);
-  border: none;
-}
-
-/* Mobile layout */
-@media (max-width: 800px) {
-  .sidebar {
-    position: static;
-    text-align: center;
-    margin-top: 20px;
+/* Responsive */
+@media(max-width:800px){
+  .container {
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+    padding:20px;
+    margin-left:0;
   }
   .chatbot {
-    position: relative;
-    transform: none;
-    width: 90vw;
-    height: 75vh;
-    margin: 20px auto;
+    width:90vw;
+    height:75vh;
+    margin-left:0;
   }
+  .sidebar {
+    align-items:center;
+    max-width:90%;
+    margin-left:0;
+    margin-top:0;
+  }
+  .qr-section h3 {font-size:32px;}
+  .qr-section img {width:140px;height:140px;}
 }
 </style>
 </head>
 <body>
-
 <div class="crawl">
-  <span>⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice.</span>
+  <span>🎃 Beware! AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. 👻</span>
 </div>
-
-<div class="sidebar">
-  <div class="qr-section">
-    <h3>Check us out on YouTube</h3>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
-  </div>
-
-  <div class="button-section">
-    <div class="button-group">
-      <h4>Our Library Catalog</h4>
-      <a onclick="openPopup('https://busdlibrary.follettdestiny.com/portal')">🔎 Destiny Portal</a>
-    </div>
-    <div class="button-group">
-      <h4>Our eBook Catalog</h4>
-      <a onclick="openPopup('https://soraapp.com/library/bellflower')">📚 Sora Library</a>
+<div class="container">
+  <iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
+  <div class="sidebar">
+    <div class="qr-section">
+      <h3>🎃 Visit Our YouTube 🎃</h3>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
     </div>
   </div>
 </div>
-
-<iframe
-  class="chatbot"
-  src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
-  allow="clipboard-write">
-</iframe>
-
-<div class="popup" id="popupWindow">
-  <div class="popup-header" id="popupHeader">
-    <span>Catalog</span>
-    <button onclick="closePopup()">✖</button>
-  </div>
-  <iframe id="popupFrame"></iframe>
-</div>
-
-<script>
-function openPopup(url) {
-  const popup = document.getElementById('popupWindow');
-  const frame = document.getElementById('popupFrame');
-  frame.src = url;
-  popup.style.display = 'block';
-}
-function closePopup() {
-  const popup = document.getElementById('popupWindow');
-  popup.style.display = 'none';
-  document.getElementById('popupFrame').src = '';
-}
-
-/* Draggable popup */
-(function() {
-  const elm = document.getElementById("popupWindow");
-  const header = document.getElementById("popupHeader");
-  let x = 0, y = 0, dx = 0, dy = 0;
-  header.onmousedown = e => {
-    e.preventDefault();
-    dx = e.clientX;
-    dy = e.clientY;
-    document.onmouseup = () => { document.onmouseup = null; document.onmousemove = null; };
-    document.onmousemove = e2 => {
-      e2.preventDefault();
-      x = dx - e2.clientX;
-      y = dy - e2.clientY;
-      dx = e2.clientX;
-      dy = e2.clientY;
-      elm.style.top = (elm.offsetTop - y) + "px";
-      elm.style.left = (elm.offsetLeft - x) + "px";
-    };
-  };
-})();
-</script>
-
 </body>
 </html>
