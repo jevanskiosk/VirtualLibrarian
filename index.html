@@ -12,11 +12,14 @@ html,body{
   height:100%;
   width:100%;
   font-family:'Baloo 2',cursive,sans-serif;
-  background:url('backgroundwithbubble.png') no-repeat center center fixed;
+  /* Christmas background */
+  background:url('https://i.imgur.com/1rHhZyL.jpeg') no-repeat center center fixed;
   background-size:cover;
   overflow-x:hidden;
   overflow-y:hidden;
 }
+
+/* Christmas crawl bar */
 .crawl{
   width:100%;
   color:#fff;
@@ -24,7 +27,9 @@ html,body{
   font-size:36px;
   overflow:hidden;
   white-space:nowrap;
-  text-shadow:1px 1px 4px rgba(0,0,0,.8);
+  background:rgba(0,0,0,0.5);
+  border-bottom:3px solid #c42525; /* red Christmas accent */
+  text-shadow:2px 2px 6px rgba(0,0,0,.9);
   z-index:10;
 }
 .crawl span{
@@ -36,6 +41,7 @@ html,body{
   0%{transform:translateX(0);}
   100%{transform:translateX(-100%);}
 }
+
 .container{
   display:flex;
   flex-direction:row;
@@ -44,47 +50,61 @@ html,body{
   gap:60px;
   margin-top:10px;
 }
+
 .chatbot{
   width:26vw;
   height:85vh;
   border:none;
-  box-shadow:0 0 10px rgba(0,0,0,.3);
+  box-shadow:0 0 15px rgba(0,0,0,.5);
   border-radius:12px;
-  background:transparent;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
   margin-left:200px;
   z-index:5;
+  border:2px solid #ffffffaa;
 }
+
 .sidebar{
   display:flex;
   flex-direction:column;
   align-items:center;
   max-width:380px;
   color:#fff;
-  text-shadow:1px 1px 4px rgba(0,0,0,.7);
+  text-shadow:2px 2px 6px rgba(0,0,0,.9);
   margin-left:225px;
   margin-top:305px;
   z-index:5;
 }
+
 .qr-section{
   text-align:center;
   margin-bottom:20px;
   margin-top:30px;
-  text-shadow:2px 2px 6px rgba(0,0,0,0.9);
 }
+
+/* Christmas frame around title */
 .qr-section h3{
-  font-size:36px; /* was 30px → 20% bigger */
+  font-size:36px;
   margin-bottom:10px;
-  background-color:rgba(139,69,19,0.5); /* brown box, 50% transparency */
-  padding:8px 12px;
-  border-radius:8px;
+  background-color:rgba(0,0,0,0.55);
+  padding:12px 20px;
+  border-radius:12px;
   display:inline-block;
+  border:3px solid #2ecc71; /* Christmas green */
+  box-shadow:0 0 10px rgba(0,0,0,0.6);
 }
+
+/* Add a glowing border to QR code */
 .qr-section img{
-  width:173px; /* was 144px → 20% bigger */
+  width:173px;
   height:173px;
   display:block;
   margin:0 auto;
+  border-radius:12px;
+  border:3px solid #c42525;
+  box-shadow:0 0 15px rgba(255,0,0,0.7);
 }
+
 @media(max-width:800px){
   .container{
     flex-direction:column;
@@ -111,13 +131,15 @@ html,body{
 </head>
 <body>
 <div class="crawl">
-  <span>⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice.</span>
+  <span>🎄🎅 Happy Holidays! — AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. 🎁❄️</span>
 </div>
+
 <div class="container">
   <iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
+
   <div class="sidebar">
     <div class="qr-section">
-      <h3>Check us out on YouTube</h3>
+      <h3>🎄 Check us out on YouTube 🎄</h3>
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
     </div>
   </div>
