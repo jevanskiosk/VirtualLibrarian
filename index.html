@@ -16,38 +16,41 @@ html,body{
   width:100%;
   font-family:'Baloo 2',cursive,sans-serif;
   background:
-    linear-gradient(rgba(55,27,9,.18),rgba(55,27,9,.18)),
+    linear-gradient(rgba(75,35,8,.15),rgba(75,35,8,.15)),
     url('backgroundwithbubble.png') no-repeat center center fixed;
   background-size:cover;
   overflow-x:hidden;
   overflow-y:hidden;
 }
 
-/* FALL DECORATIONS */
+/* THANKSGIVING TOP DECORATION */
 body::before{
-  content:"🍂  🍁  🍂  🍁  🍂  🍁  🍂  🍁  🍂";
+  content:"🍂  🍁  🍂  🍁  🦃  🍁  🍂  🍁  🍂";
   position:fixed;
   top:0;
   left:0;
   width:100%;
   text-align:center;
-  font-size:30px;
-  letter-spacing:12px;
-  padding:5px 0;
+  font-size:26px;
+  letter-spacing:8px;
+  padding:3px 0;
   pointer-events:none;
   z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.5);
+  text-shadow:1px 2px 4px rgba(0,0,0,.6);
 }
 
 .crawl{
   width:100%;
-  color:#fff8e8;
+  color:#fff4dc;
   padding:10px 0;
-  margin-top:38px;
+  margin-top:30px;
   font-size:36px;
   overflow:hidden;
   white-space:nowrap;
-  text-shadow:2px 2px 5px rgba(65,29,5,.95);
+  text-shadow:
+    2px 2px 3px #542508,
+    -1px -1px 2px #542508,
+    0 0 8px rgba(110,48,8,.8);
   z-index:10;
 }
 
@@ -74,8 +77,8 @@ body::before{
 .chatbot{
   width:26vw;
   height:85vh;
-  border:3px solid rgba(218,144,58,.65);
-  box-shadow:0 0 16px rgba(65,29,5,.45);
+  border:2px solid rgba(218,155,76,.7);
+  box-shadow:0 0 14px rgba(70,30,5,.4);
   border-radius:12px;
   background:transparent;
   margin-left:200px;
@@ -87,8 +90,8 @@ body::before{
   flex-direction:column;
   align-items:center;
   max-width:380px;
-  color:#fff8e8;
-  text-shadow:2px 2px 5px rgba(45,20,5,.9);
+  color:#fff4dc;
+  text-shadow:2px 2px 5px rgba(60,25,5,.9);
   margin-left:225px;
   margin-top:305px;
   z-index:5;
@@ -104,13 +107,13 @@ body::before{
 .qr-section h3{
   font-size:36px;
   margin-bottom:10px;
-  background-color:rgba(119,57,20,.82);
+  background-color:rgba(117,57,17,.75);
   color:#fff4dc;
-  border:2px solid #e7b66d;
+  border:2px solid #e6b76c;
   padding:8px 12px;
-  border-radius:12px;
+  border-radius:10px;
   display:inline-block;
-  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  box-shadow:0 3px 8px rgba(0,0,0,.3);
 }
 
 .qr-section img{
@@ -118,25 +121,25 @@ body::before{
   height:173px;
   display:block;
   margin:0 auto;
-  border:7px solid #fff4dc;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,.45);
+  border:6px solid #fff4dc;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
 }
 
-/* FALLEN LEAVES ALONG BOTTOM */
+/* THANKSGIVING BOTTOM DECORATION */
 body::after{
-  content:"🍁  🍂  🎃  🍂  🍁  🍂  🦃  🍁  🍂  🎃  🍁";
+  content:"🍁  🍂  🎃  🍂  🦃  🍁  🍂  🎃  🍁";
   position:fixed;
   bottom:0;
   left:0;
   width:100%;
   text-align:center;
-  font-size:30px;
-  letter-spacing:10px;
-  padding:5px 0;
+  font-size:26px;
+  letter-spacing:8px;
+  padding:3px 0;
   pointer-events:none;
   z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.5);
+  text-shadow:1px 2px 4px rgba(0,0,0,.6);
 }
 
 @media(max-width:800px){
@@ -170,7 +173,9 @@ body::after{
 <body>
 
 <div class="crawl">
-  <span>⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • Happy Thanksgiving! 🦃</span>
+  <span>
+    ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • 🦃 Happy Thanksgiving, Monsoons! 🍂
+  </span>
 </div>
 
 <div class="container">
