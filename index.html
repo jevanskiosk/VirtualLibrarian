@@ -3,199 +3,146 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Thanksgiving Virtual Librarian</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas - Library Playlist</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap');
-
-html,body{
-  margin:0;
-  padding:0;
-  height:100%;
-  width:100%;
-  font-family:'Baloo 2',cursive,sans-serif;
-  background:
-    linear-gradient(rgba(75,35,8,.15),rgba(75,35,8,.15)),
-    url('backgroundwithbubble.png') no-repeat center center fixed;
-  background-size:cover;
-  overflow-x:hidden;
-  overflow-y:hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* THANKSGIVING TOP DECORATION */
-body::before{
-  content:"🍂  🍁  🍂  🍁  🦃  🍁  🍂  🍁  🍂";
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  text-align:center;
-  font-size:26px;
-  letter-spacing:8px;
-  padding:3px 0;
-  pointer-events:none;
-  z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.6);
+/* Fullscreen YouTube playlist */
+.video-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: black;
 }
 
-.crawl{
-  width:100%;
-  color:#fff4dc;
-  padding:10px 0;
-  margin-top:30px;
-  font-size:36px;
-  overflow:hidden;
-  white-space:nowrap;
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 120vh;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+/* Christmas holiday crawl */
+.holiday-crawl {
+  position: fixed;
+  bottom: 3%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.holiday-crawl span {
+  display: inline-block;
+  padding-left: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
   text-shadow:
-    2px 2px 3px #542508,
-    -1px -1px 2px #542508,
-    0 0 8px rgba(110,48,8,.8);
-  z-index:10;
+    2px 2px 4px #000000,
+    0 0 8px #b71c1c,
+    0 0 12px #165b33;
+  animation: holiday-scroll 25s linear infinite;
 }
 
-.crawl span{
-  display:inline-block;
-  padding-left:100%;
-  animation:scroll-left 50s linear infinite;
-}
-
-@keyframes scroll-left{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
-}
-
-.container{
-  display:flex;
-  flex-direction:row;
-  align-items:flex-start;
-  padding:0 40px;
-  gap:60px;
-  margin-top:10px;
-}
-
-.chatbot{
-  width:26vw;
-  height:85vh;
-  border:2px solid rgba(218,155,76,.7);
-  box-shadow:0 0 14px rgba(70,30,5,.4);
-  border-radius:12px;
-  background:transparent;
-  margin-left:200px;
-  z-index:5;
-}
-
-.sidebar{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  max-width:380px;
-  color:#fff4dc;
-  text-shadow:2px 2px 5px rgba(60,25,5,.9);
-  margin-left:225px;
-  margin-top:305px;
-  z-index:5;
-}
-
-.qr-section{
-  text-align:center;
-  margin-bottom:20px;
-  margin-top:30px;
-  text-shadow:2px 2px 6px rgba(0,0,0,.9);
-}
-
-.qr-section h3{
-  font-size:36px;
-  margin-bottom:10px;
-  background-color:rgba(117,57,17,.75);
-  color:#fff4dc;
-  border:2px solid #e6b76c;
-  padding:8px 12px;
-  border-radius:10px;
-  display:inline-block;
-  box-shadow:0 3px 8px rgba(0,0,0,.3);
-}
-
-.qr-section img{
-  width:173px;
-  height:173px;
-  display:block;
-  margin:0 auto;
-  border:6px solid #fff4dc;
-  border-radius:8px;
-  box-shadow:0 4px 10px rgba(0,0,0,.4);
-}
-
-/* THANKSGIVING BOTTOM DECORATION */
-body::after{
-  content:"🍁  🍂  🎃  🍂  🦃  🍁  🍂  🎃  🍁";
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  text-align:center;
-  font-size:26px;
-  letter-spacing:8px;
-  padding:3px 0;
-  pointer-events:none;
-  z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.6);
-}
-
-@media(max-width:800px){
-  .container{
-    flex-direction:column;
-    align-items:center;
-    gap:30px;
-    padding:20px;
-    margin-left:0;
+@keyframes holiday-scroll {
+  0% {
+    transform: translateX(0);
   }
-
-  .chatbot{
-    width:90vw;
-    height:75vh;
-    margin-left:0;
+  100% {
+    transform: translateX(-100%);
   }
+}
 
-  .sidebar{
-    align-items:center;
-    max-width:90%;
-    margin-left:0;
-    margin-top:0;
+/* Subtle falling snow */
+.snow {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 18px;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 5;
+  animation: snowfall linear infinite;
+}
+
+.snow:nth-child(1) {
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.snow:nth-child(2) {
+  left: 25%;
+  animation-duration: 16s;
+  animation-delay: 3s;
+}
+
+.snow:nth-child(3) {
+  left: 45%;
+  animation-duration: 14s;
+  animation-delay: 1s;
+}
+
+.snow:nth-child(4) {
+  left: 65%;
+  animation-duration: 18s;
+  animation-delay: 5s;
+}
+
+.snow:nth-child(5) {
+  left: 85%;
+  animation-duration: 13s;
+  animation-delay: 2s;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
   }
-
-  .qr-section h3{font-size:32px;}
-  .qr-section img{width:140px;height:140px;}
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="crawl">
-  <span>
-    ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • 🦃 Happy Thanksgiving, Monsoons! 🍂
-  </span>
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/videoseries?si=EmUcm--X-SNPLCWW&amp;list=PLoNXhSmdR5P1gpXpkMvFpx-JDFRa5U7dx&autoplay=1"
+    title="Christmas Holiday Playlist"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
 </div>
 
-<div class="container">
+<!-- Falling snowflakes -->
+<div class="snow">❄</div>
+<div class="snow">❄</div>
+<div class="snow">❄</div>
+<div class="snow">❄</div>
+<div class="snow">❄</div>
 
-  <iframe
-    class="chatbot"
-    src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
-    allow="clipboard-write">
-  </iframe>
-
-  <div class="sidebar">
-    <div class="qr-section">
-      <h3>Check us out on YouTube</h3>
-
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=https://www.youtube.com/c/mrevans"
-        alt="QR code for Mr. Evans YouTube channel">
-    </div>
-  </div>
-
+<!-- Christmas holiday crawl -->
+<div class="holiday-crawl">
+  <span>🎄❄️ Happy holiday, Monsoons! Break starts December 19th! 🎅🏼🎁✨</span>
 </div>
 
 </body>
