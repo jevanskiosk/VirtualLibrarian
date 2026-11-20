@@ -16,7 +16,7 @@ html,body{
   width:100%;
   font-family:'Baloo 2',cursive,sans-serif;
   background:
-    linear-gradient(rgba(8,45,25,.15),rgba(8,45,25,.15)),
+    linear-gradient(rgba(15,35,25,.18),rgba(15,35,25,.18)),
     url('backgroundwithbubble.png') no-repeat center center fixed;
   background-size:cover;
   overflow-x:hidden;
@@ -25,20 +25,59 @@ html,body{
 
 /* CHRISTMAS TOP DECORATION */
 body::before{
-  content:"🎄  ❄️  🎁  ✨  🔔  ✨  🎁  ❄️  🎄";
+  content:"🎄  ✨  🔔  ❄️  🎁  ⭐  🎁  ❄️  🔔  ✨  🎄";
   position:fixed;
   top:0;
   left:0;
   width:100%;
   text-align:center;
-  font-size:26px;
-  letter-spacing:8px;
+  font-size:27px;
+  letter-spacing:7px;
   padding:3px 0;
   pointer-events:none;
   z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.6);
+  text-shadow:1px 2px 5px rgba(0,0,0,.8);
 }
 
+/* FALLING SNOW */
+.snow{
+  position:fixed;
+  top:-10px;
+  color:white;
+  pointer-events:none;
+  z-index:15;
+  user-select:none;
+  text-shadow:0 0 5px rgba(255,255,255,.9);
+  animation:snowfall linear infinite;
+}
+
+@keyframes snowfall{
+  0%{
+    transform:translateY(-10px) translateX(0);
+    opacity:0;
+  }
+  10%{opacity:.9;}
+  90%{opacity:.8;}
+  100%{
+    transform:translateY(110vh) translateX(45px);
+    opacity:0;
+  }
+}
+
+.snow:nth-of-type(1){left:5%;font-size:18px;animation-duration:12s;animation-delay:0s;}
+.snow:nth-of-type(2){left:12%;font-size:13px;animation-duration:16s;animation-delay:3s;}
+.snow:nth-of-type(3){left:20%;font-size:21px;animation-duration:14s;animation-delay:6s;}
+.snow:nth-of-type(4){left:29%;font-size:15px;animation-duration:18s;animation-delay:1s;}
+.snow:nth-of-type(5){left:38%;font-size:20px;animation-duration:13s;animation-delay:5s;}
+.snow:nth-of-type(6){left:47%;font-size:14px;animation-duration:17s;animation-delay:2s;}
+.snow:nth-of-type(7){left:56%;font-size:19px;animation-duration:15s;animation-delay:7s;}
+.snow:nth-of-type(8){left:65%;font-size:13px;animation-duration:19s;animation-delay:4s;}
+.snow:nth-of-type(9){left:74%;font-size:22px;animation-duration:14s;animation-delay:2s;}
+.snow:nth-of-type(10){left:83%;font-size:16px;animation-duration:16s;animation-delay:6s;}
+.snow:nth-of-type(11){left:92%;font-size:20px;animation-duration:13s;animation-delay:1s;}
+.snow:nth-of-type(12){left:98%;font-size:14px;animation-duration:18s;animation-delay:8s;}
+
+/* SCROLLING MESSAGE */
 .crawl{
   width:100%;
   color:#fff8e7;
@@ -48,9 +87,9 @@ body::before{
   overflow:hidden;
   white-space:nowrap;
   text-shadow:
-    2px 2px 3px #064421,
-    -1px -1px 2px #064421,
-    0 0 8px rgba(120,0,0,.8);
+    2px 2px 3px #780b16,
+    -1px -1px 2px #780b16,
+    0 0 9px rgba(0,65,30,.9);
   z-index:10;
 }
 
@@ -65,6 +104,7 @@ body::before{
   100%{transform:translateX(-100%);}
 }
 
+/* MAIN LAYOUT */
 .container{
   display:flex;
   flex-direction:row;
@@ -77,8 +117,10 @@ body::before{
 .chatbot{
   width:26vw;
   height:85vh;
-  border:2px solid rgba(218,190,110,.8);
-  box-shadow:0 0 14px rgba(10,45,20,.5);
+  border:3px solid rgba(218,190,110,.85);
+  box-shadow:
+    0 0 14px rgba(10,45,20,.6),
+    0 0 8px rgba(190,20,35,.3);
   border-radius:12px;
   background:transparent;
   margin-left:200px;
@@ -107,13 +149,15 @@ body::before{
 .qr-section h3{
   font-size:36px;
   margin-bottom:10px;
-  background-color:rgba(117,15,25,.85);
+  background:linear-gradient(135deg,#8b101b,#b51f2b,#790d18);
   color:#fff8e7;
-  border:2px solid #d9bd72;
+  border:3px solid #e5c36b;
   padding:8px 12px;
   border-radius:10px;
   display:inline-block;
-  box-shadow:0 3px 8px rgba(0,0,0,.3);
+  box-shadow:
+    0 3px 8px rgba(0,0,0,.4),
+    0 0 12px rgba(218,190,110,.4);
 }
 
 .qr-section img{
@@ -123,25 +167,28 @@ body::before{
   margin:0 auto;
   border:6px solid #fff8e7;
   border-radius:8px;
-  box-shadow:0 4px 10px rgba(0,0,0,.4);
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.4),
+    0 0 12px rgba(218,190,110,.8);
 }
 
 /* CHRISTMAS BOTTOM DECORATION */
 body::after{
-  content:"❄️  🎄  🔔  🎁  ⭐  🎁  🔔  🎄  ❄️";
+  content:"❄️  🎁  🎄  ⭐  🔔  ⭐  🎄  🎁  ❄️";
   position:fixed;
   bottom:0;
   left:0;
   width:100%;
   text-align:center;
-  font-size:26px;
-  letter-spacing:8px;
+  font-size:27px;
+  letter-spacing:7px;
   padding:3px 0;
   pointer-events:none;
   z-index:20;
-  text-shadow:1px 2px 4px rgba(0,0,0,.6);
+  text-shadow:1px 2px 5px rgba(0,0,0,.8);
 }
 
+/* MOBILE */
 @media(max-width:800px){
   .container{
     flex-direction:column;
@@ -172,9 +219,24 @@ body::after{
 
 <body>
 
+<!-- FALLING SNOWFLAKES -->
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+<div class="snow">❄</div>
+<div class="snow">❅</div>
+
+<!-- SCROLLING MESSAGE -->
 <div class="crawl">
   <span>
-    ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • 🎄 Merry Christmas and Happy Holidays, Monsoons! ❄️ 🎁
+    ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • 🎄 Merry Christmas and Happy Holidays, Monsoons! 🎅 May your winter break be filled with good books and holiday magic! ❄️ 🎁
   </span>
 </div>
 
