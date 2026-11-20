@@ -1,12 +1,13 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Virtual Librarian - Christmas Edition</title>
+<title>Thanksgiving Virtual Librarian</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap');
 
 html,body{
   margin:0;
@@ -14,20 +15,42 @@ html,body{
   height:100%;
   width:100%;
   font-family:'Baloo 2',cursive,sans-serif;
-  background:url('backgroundwithbubble.png') no-repeat center center fixed;
+  background:
+    linear-gradient(rgba(75,35,8,.15),rgba(75,35,8,.15)),
+    url('backgroundwithbubble.png') no-repeat center center fixed;
   background-size:cover;
   overflow-x:hidden;
   overflow-y:hidden;
 }
 
+/* THANKSGIVING TOP DECORATION */
+body::before{
+  content:"🍂  🍁  🍂  🍁  🦃  🍁  🍂  🍁  🍂";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:26px;
+  letter-spacing:8px;
+  padding:3px 0;
+  pointer-events:none;
+  z-index:20;
+  text-shadow:1px 2px 4px rgba(0,0,0,.6);
+}
+
 .crawl{
   width:100%;
-  color:#fff;
+  color:#fff4dc;
   padding:10px 0;
+  margin-top:30px;
   font-size:36px;
   overflow:hidden;
   white-space:nowrap;
-  text-shadow:2px 2px 5px rgba(0,0,0,.95);
+  text-shadow:
+    2px 2px 3px #542508,
+    -1px -1px 2px #542508,
+    0 0 8px rgba(110,48,8,.8);
   z-index:10;
 }
 
@@ -54,8 +77,8 @@ html,body{
 .chatbot{
   width:26vw;
   height:85vh;
-  border:none;
-  box-shadow:0 0 14px rgba(0,0,0,.4);
+  border:2px solid rgba(218,155,76,.7);
+  box-shadow:0 0 14px rgba(70,30,5,.4);
   border-radius:12px;
   background:transparent;
   margin-left:200px;
@@ -67,8 +90,8 @@ html,body{
   flex-direction:column;
   align-items:center;
   max-width:380px;
-  color:#fff;
-  text-shadow:2px 2px 5px rgba(0,0,0,.9);
+  color:#fff4dc;
+  text-shadow:2px 2px 5px rgba(60,25,5,.9);
   margin-left:225px;
   margin-top:305px;
   z-index:5;
@@ -78,18 +101,19 @@ html,body{
   text-align:center;
   margin-bottom:20px;
   margin-top:30px;
-  text-shadow:2px 2px 6px rgba(0,0,0,0.9);
+  text-shadow:2px 2px 6px rgba(0,0,0,.9);
 }
 
 .qr-section h3{
   font-size:36px;
   margin-bottom:10px;
-  background-color:rgba(0,75,35,0.85);
-  border:2px solid #d4af37;
+  background-color:rgba(117,57,17,.75);
+  color:#fff4dc;
+  border:2px solid #e6b76c;
   padding:8px 12px;
-  border-radius:8px;
+  border-radius:10px;
   display:inline-block;
-  box-shadow:0 0 10px rgba(212,175,55,0.4);
+  box-shadow:0 3px 8px rgba(0,0,0,.3);
 }
 
 .qr-section img{
@@ -97,9 +121,25 @@ html,body{
   height:173px;
   display:block;
   margin:0 auto;
-  border:5px solid #fff;
+  border:6px solid #fff4dc;
   border-radius:8px;
-  box-shadow:0 0 12px rgba(212,175,55,0.8);
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+}
+
+/* THANKSGIVING BOTTOM DECORATION */
+body::after{
+  content:"🍁  🍂  🎃  🍂  🦃  🍁  🍂  🎃  🍁";
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:26px;
+  letter-spacing:8px;
+  padding:3px 0;
+  pointer-events:none;
+  z-index:20;
+  text-shadow:1px 2px 4px rgba(0,0,0,.6);
 }
 
 @media(max-width:800px){
@@ -110,17 +150,20 @@ html,body{
     padding:20px;
     margin-left:0;
   }
+
   .chatbot{
     width:90vw;
     height:75vh;
     margin-left:0;
   }
+
   .sidebar{
     align-items:center;
     max-width:90%;
     margin-left:0;
     margin-top:0;
   }
+
   .qr-section h3{font-size:32px;}
   .qr-section img{width:140px;height:140px;}
 }
@@ -130,20 +173,30 @@ html,body{
 <body>
 
 <div class="crawl">
-  <span>🎄 ✨ Happy Holidays from your Virtual Librarian! ✨ 🎅 Looking for a little holiday magic? Discover your next great read, explore new adventures, and find something wonderful to read over winter break! ❄️ 📚 🎁 • ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. 🎄</span>
+  <span>
+    ⚠️ AI may give incorrect or outdated information — verify important details. • Never share personal or sensitive data. • This chatbot is a support tool, not a replacement for professional advice. • 🦃 Happy Thanksgiving, Monsoons! 🍂
+  </span>
 </div>
 
 <div class="container">
-  <iframe class="chatbot" src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7" allow="clipboard-write"></iframe>
+
+  <iframe
+    class="chatbot"
+    src="https://www.playlab.ai/embedded/cma1lng2i17v6rgigh3onpno7"
+    allow="clipboard-write">
+  </iframe>
 
   <div class="sidebar">
     <div class="qr-section">
-      <h3>🎄 Check us out on YouTube! 🎄</h3>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=https://www.youtube.com/c/mrevans" alt="QR code for Mr. Evans YouTube channel">
+      <h3>Check us out on YouTube</h3>
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=https://www.youtube.com/c/mrevans"
+        alt="QR code for Mr. Evans YouTube channel">
     </div>
   </div>
+
 </div>
 
 </body>
 </html>
-```
